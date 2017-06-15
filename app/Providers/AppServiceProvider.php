@@ -14,7 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // See https://stackoverflow.com/questions/23786359/laravel-migration-unique-key-is-too-long-even-if-specified
+        // if getting "key too long" errors during migrate:
+        //Schema::defaultStringLength(191);
     }
 
     /**
