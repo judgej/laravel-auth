@@ -94,9 +94,20 @@
                             </div>
                         </div>
 
-                        <p class="text-center margin-bottom-2">
-                            Or Use Social Logins to Register
-                        </p>
+                        @if(
+                            Config::get('services.facebook.client_id')
+                            || Config::get('services.twitter.client_id')
+                            || Config::get('services.google.client_id')
+                            || Config::get('services.github.client_id')
+                            || Config::get('services.youtube.client_id')
+                            || Config::get('services.twitch.client_id')
+                            || Config::get('services.instagram.client_id')
+                            || Config::get('services.37signals.client_id')
+                        )
+                            <p class="text-center margin-bottom-2">
+                                Or Use Social Logins to Register
+                            </p>
+                        @endif
 
                         @include('partials.socials')
 
